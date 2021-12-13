@@ -71,11 +71,7 @@ function fetchVideo() {
 }</pre>
 
 <div class="note">
-<p><strong>注記</strong>: <code>abort()</code> が呼ばれると、<code>fetch()</code> promise は <code>AbortError</code> で失敗します。</p>
-</div>
-
-<div class="warning">
-<p>現在のバージョンの Firefox は、<code>DOMException</code> で失敗します。</p>
+<p><strong>注記</strong>: <code>abort()</code> が呼ばれると、<code>fetch()</code> promise は <code>AbortError</code> と呼ばれる <code>DOMException</code> で失敗します。</p>
 </div>
 
 <p>GitHub で完全に動作する例を見ることができます — <a href="https://github.com/mdn/dom-examples/tree/master/abort-api">abort-api</a> (または <a href="https://mdn.github.io/dom-examples/abort-api/">実際に動作する様子</a> を参照) を参照してください。</p>
@@ -90,7 +86,7 @@ function fetchVideo() {
    <th scope="col">コメント</th>
   </tr>
   <tr>
-   <td>{{SpecName('DOM WHATWG', '#interface-AbortSignal', 'AbortSignal')}}</td>
+   <td>{{SpecName('DOM WHATWG', '#interface-AbortController', 'AbortController')}}</td>
    <td>{{Spec2('DOM WHATWG')}}</td>
    <td>初回定義</td>
   </tr>
@@ -99,7 +95,7 @@ function fetchVideo() {
 
 <h2 id="Browser_compatibility" name="Browser_compatibility">ブラウザの実装状況</h2>
 
-<p>{{Compat("api.AbortSignal")}}</p>
+<p>{{Compat("api.AbortController")}}</p>
 
 <h2 id="関連情報">関連情報</h2>
 
