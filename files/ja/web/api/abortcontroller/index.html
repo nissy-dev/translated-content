@@ -13,32 +13,28 @@ translation_of: Web/API/AbortController
 
 <p><strong><code>AbortController</code></strong> インターフェースは一つ以上のリクエストをいつでも中断することを可能にするコントローラーオブジェクトを表します。</p>
 
-<p>{{domxref("AbortController.AbortController()")}}<a href="/en-US/docs/Web/API/AbortController/AbortController" title="AbortController()"></a>コンストラクタを使うことで <code>AbortController</code> オブジェクトを新しく作ることができます。Communicating with a DOM request is done using an <a href="/en-US/docs/Web/API/AbortSignal"><code>AbortSignal</code></a> object.</p>
+<p>{{domxref("AbortController.AbortController()")}}コンストラクタを使うことで <code>AbortController</code> オブジェクトを新しく作ることができます。DOMリクエストとの送信は、AbortSignalオブジェクトを使って行われます。</p>
 
-<p><strong><code>AbortSignal</code></strong> インターフェイスは DOM 要求 (Fetch など) と通信し、必要に応じて {{domxref("AbortSignal")}} オブジェクトを介して中断することを可能にするシグナルオブジェクトを表します。</p>
-
-<h2 id="Properties" name="Properties">プロパティ</h2>
-
-<p><em>AbortSignal インターフェイスはまた、親のインターフェースである、 {{domxref("EventTarget")}} からプロパティを継承しています。</em></p>
+<h2 id="constructor">コンストラクタ</h2>
 
 <dl>
- <dt>{{domxref("AbortSignal.aborted")}} {{readonlyInline}}</dt>
- <dd>シグナルが通信しているリクエスト(複数回も)が中断しているかを示す {{domxref("Boolean")}} で、(<code>true</code>) が中断している 、(<code>false</code>) は中断していないを表します。</dd>
+ <dt>{{domxref("AbortController()")}}</dt>
+ <dd>新しい<code>AbortController</code>オブジェクトインスタンスを生成します。</dd>
 </dl>
 
-<h2 id="Events" name="Events">イベント</h2>
-
-<p><code><a href="/ja/docs/Web/API/EventTarget/addEventListener">addEventListener()</a></code> を使うかこのインターフェースの <code>on<em>eventname</em></code> プロパティにイベントリスナーを割り当てることでこのイベントへのアクセスに待機します。</p>
+<h2 id="properties">プロパティ</h2>
 
 <dl>
- <dt><code><a href="/ja/docs/Web/API/AbortSignal/abort_event">abort</a></code></dt>
- <dd>シグナルが通信している DOM リクエスト (複数回も) の中断を呼び出す。<br>
- また <code><a href="/ja/docs/Web/API/AbortSignal/onabort">onabort</a></code> プロパティを介して利用可能です。</dd>
+ <dt>{{domxref("AbortController.signal")}} {{readonlyInline}}</dt>
+ <dd>{{domxref("AbortSignal")}}AbortSignalオブジェクトのインスタンスを返します。 このオブジェクトは、DOMリクエストの送信や中断に使用します。</dd>
 </dl>
 
-<h2 id="Methods" name="Methods">メソッド</h2>
+<h2 id="methods">メソッド</h2>
 
-<p><em>AbortSignal インターフェースは親インタフェースである、{{domxref("EventTarget")}} からメソッドを継承します。</em></p>
+<dl>
+ <dt>{{domxref("AbortController.abort()")}}</dt>
+ <dd><p>DOMリクエストが完了する前に中断します。 これは、<a href="/ja/docs/Web/API/fetch">fetchリクエスト</a>、あらゆるレスポンスボディの消費、およびストリームを中断できます。</p></dd>
+</dl>
 
 <h2 id="Examples" name="Examples">例</h2>
 
